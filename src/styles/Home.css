@@ -1,0 +1,90 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-subtitle {
+  color: #ffff;
+  font-size: 20px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.hero-subtitle span {
+  font-weight: 700;
+}
+
+.hero-title {
+  color: aqua;
+  font-size: 120px;
+  line-height: 120px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.hero-btns {
+  margin-bottom: 34px;
+}
+
+.btn {
+  color: #ffff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 21px 60px;
+  border: none;
+  font-family: 'Source Sans 3', sans-serif;
+  letter-spacing: 4px;
+}
+
+.play {
+  background: #242424;
+  margin-right: 24px;
+}
+
+.list {
+  background: rgba(36,36,36,0.5);
+}
+
+/* LIST CONTAINER */
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 220px;
+  height: 146px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.movie-container:last-child {
+  margin-bottom: 0px;
+}
+
+.thumb-title {
+  color: #ffff;
+  font-size: 16px;
+  font: 400px;
+  text-align: center;
+}
+
+.movie-container .ellipse, .movie-container .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

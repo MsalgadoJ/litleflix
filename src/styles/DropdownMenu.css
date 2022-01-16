@@ -1,0 +1,46 @@
+.dropdown-container {
+  margin-bottom: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-visible {
+  position: absolute;
+  background: var(--backgroundColor);
+  overflow: hidden;
+  z-index: 1;
+
+  /* z-index: 1;
+  position: absolute;
+  top: 67px;
+  right: 0px; */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: background var(--speed) ease-in-out;
+}
+
+.menu-item:hover {
+  background-color: #3b3b3b;
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}

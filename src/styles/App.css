@@ -1,0 +1,31 @@
+:root {
+  --backgroundColor: #242424;
+  --primaryColor: Aqua;
+  --white: #fff;
+  --speed: 0.5s;
+  --barHeight: 4px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  letter-spacing: 4px;
+  font-style: normal;
+}
+
+.App {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+  height: 112px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.left-nav, .right-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.left-nav {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: #ffff;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  margin-right: 64px;
+}
+
+.link.logo {
+  color: Aqua;
+  font-size: 34px;
+  line-height: 34px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+/* RIGHT NAV */
+.right-nav {
+  justify-content: space-between;
+  width: 20%;
+}
+
+.burger-menu {
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stripes {
+  width: 100%;
+  height: 1px;
+  background: #ffff;
+  margin-bottom: 6px;
+}
+
+.stripes:last-child {
+  margin-bottom: 0;
+  width: 60%;
+}
+
+.notifications {
+  position: relative;
+}
+.bell {
+}
+.dot {
+  position: absolute;
+  right: 2px;
+}
+
+.profile {
+  width: 42px;
+}
+.profile img {
+  width: 100%;
+  border-radius: 50%;
+}

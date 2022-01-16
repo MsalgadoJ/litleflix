@@ -1,0 +1,32 @@
+.progress-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-text:last-child {
+  align-self: flex-end;
+}
+
+.progress-bar {
+  width: 100%;
+  margin: 17px 0;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: var(--barHeight);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.progress-filler {
+  height: calc(var(--barHeight) * 2);
+  background: var(--primaryColor);
+  transition: width 3.5s ease-in;
+}
+
+.error {
+  background: red;
+} 

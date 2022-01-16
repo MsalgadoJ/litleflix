@@ -1,0 +1,14 @@
+.add-movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-movie-container h1 {
+  color: #64EEBC;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
