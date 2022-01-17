@@ -1,5 +1,6 @@
-import React, {useState, useMemo, useCallback, useEffect} from 'react';
+import React, {useMemo, useCallback} from 'react';
 import {useDropzone} from 'react-dropzone';
+import clip from '../assests/images/clip.png'
 
 const baseStyle = {
   flex: 1,
@@ -39,7 +40,6 @@ const DragAndDrop = ({onSelectedImgChange, onRejected}) => {
     console.log('rechazados: ',rejectedFiles)
     onSelectedImgChange(acceptedFiles[0])
     onRejected(rejectedFiles)
-
   }, [])
 
   const {
@@ -66,15 +66,10 @@ const DragAndDrop = ({onSelectedImgChange, onRejected}) => {
     <section className="container">
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
-        <p>Agregá un archivo o arrastralo y soltalo aquí</p>
-        {/* <em>(1 files are the maximum number of files you can drop here)</em> */}
+        <div className='drag-zone-wrapper'>
+        <img src={clip} alt="clip" title="clip"/> <p>AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ</p>
+        </div>
       </div>
-      {/* <aside>
-        <h4>Accepted files</h4>
-        <ul>{acceptedFileItems}</ul>
-        <h4>Rejected files</h4>
-        <ul>{fileRejectionItems}</ul>
-      </aside> */}
     </section>
   );
 }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import DropdownItem from './DropdownItem';
+import arrow from '../assests/images/arrow.png';
+import check from '../assests/images/check.png';
 import '../styles/DropdownMenu.css';
 import { CSSTransition } from 'react-transition-group';
 
@@ -7,8 +9,6 @@ const DropdownMenu = ({options, selected, onSelectedChange}) => {
 
   const [open, setOpen] = useState(false);
   const ref = useRef();
-
-  const [activeMenu, setActiveMenu] = useState('main')
 
   useEffect(() => {
     document.body.addEventListener('click', (event) => {
@@ -20,36 +20,49 @@ const DropdownMenu = ({options, selected, onSelectedChange}) => {
   }, [])
 
   const renderOptions = options.map(option => {
-    return (
-      <DropdownItem 
-        key={option.value}
-        option={option}
-        onSelectedChange={onSelectedChange}
-        open={open}
-        onOpenChange={setOpen}
-      >
-          {option.label}
-      </DropdownItem>
-    )
+    if(option.value === selected.value) {
+      return (
+        <DropdownItem 
+          key={option.value}
+          option={option}
+          onSelectedChange={onSelectedChange}
+          open={open}
+          onOpenChange={setOpen}
+          icon={check}
+        >
+            {option.label}
+        </DropdownItem>
+      )
+    } else {
+      return (
+        <DropdownItem 
+          key={option.value}
+          option={option}
+          onSelectedChange={onSelectedChange}
+          open={open}
+          onOpenChange={setOpen}
+          icon={undefined}
+        >
+            {option.label}
+        </DropdownItem>
+      )
+    }
   })
 
   return (
     <div ref={ref} className='dropdown-container'>
       <div className="dropdown">
-          <div className="dropdown-btn" onClick={()=>setOpen(!open)}>
-           <p className="text">VER: {selected.label}</p>
+          <div 
+            className="dropdown-btn" 
+            onClick={()=>setOpen(!open)}
+          >
+           <p className="dropdown-text">VER: <strong>{selected.label}</strong></p> <img src={arrow} alt="chevron-down" title="chevron-down" />
           </div>
-          <div className="menu-visible">
-            <CSSTransition 
-              in={activeMenu === 'main'}
-              unmountOnExit
-              timeout={500}
-              classNames="menu-primary"
-            >
-              <div className="menu">
-                {open ? renderOptions : null}
-              </div>
-            </CSSTransition>
+          {/* <div className={`dropdown-point ${open ? 'show' : ''}`}></div> */}
+          <div className={`menu-visible ${open ? 'visible' : ''}`}>
+            <div className="menu">
+              {open ? renderOptions : null}
+            </div>
           </div>
       </div>
     </div>

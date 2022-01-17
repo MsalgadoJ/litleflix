@@ -1,27 +1,79 @@
 .dropdown-container {
+  width: 100%;
   margin-bottom: 25px;
   position: relative;
   cursor: pointer;
 }
 
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-btn img {
+  width: 11px;
+  height: 5px;
+}
+
+.dropdown-text {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  margin-right: 10px;
+}
+
 .menu-visible {
   position: absolute;
   background: var(--backgroundColor);
-  overflow: hidden;
   z-index: 1;
+  right: 0px;
+  top: 32px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity var(--speed) ease-in-out;
+}
 
-  /* z-index: 1;
+.menu-visible::before {
   position: absolute;
-  top: 67px;
-  right: 0px; */
+  content: "";
+  width: 12px;
+  height: 12px;
+  top: -6px;
+  right: 11px;
+  background: var(--backgroundColor);
+  transform: rotate(45deg);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+
+/*PARA AGREGAR LA TRANSICIÓN QUTARLE ALTURA Y ANCHO */
+
+.visible {
+  padding: 12px;
+  opacity: 1;
+}
+
+
+.show {
+  opacity:1;
 }
 
 .menu-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 12px;
   color: var(--white);
   cursor: pointer;
   transition: background var(--speed) ease-in-out;
+  border-radius: 5px;
+}
+
+.menu-item:last-child {
+  margin-bottom: 0px;
 }
 
 .menu-item:hover {

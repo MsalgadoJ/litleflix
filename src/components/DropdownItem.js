@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DropdownItem = ({children, option, onSelectedChange, open, onOpenChange}) => {
+const DropdownItem = ({children, option, onSelectedChange, open, onOpenChange, icon}) => {
 
   const onClickChanges = () => {
     onSelectedChange(option)
@@ -8,10 +8,12 @@ const DropdownItem = ({children, option, onSelectedChange, open, onOpenChange}) 
   }
 
   return (
-      <a className="menu-item" onClick={onClickChanges}>
-        {children}
-        <span className="right-icon">{}</span>
-      </a>
+    <div className="menu-item" onClick={onClickChanges}>
+      <p className="menu-item-text">{children}</p>
+      {icon !== undefined ?
+      <p className="menu-item-icon"><img src={icon} alt="checked" title='checked' /></p>
+      : null}
+    </div>
   )
 }
 

@@ -13,19 +13,22 @@
 }
 
 body {
+  font-family: 'Bebas Neue', cursive;
   font-family: 'Source Sans 3', sans-serif;
   letter-spacing: 4px;
   font-style: normal;
 }
 
 .App {
+  background: var(--backgroundColor);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper {
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
 }
