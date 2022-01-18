@@ -13,7 +13,7 @@
   transition-duration: 1s;
   transform: translateX(140%);
   opacity: 0;
-  box-shadow: 8px 8px 8px rgba(140, 120, 120, 0.3);
+  box-shadow: 6px 6px 6px rgba(140, 120, 120, 0.3);
 }
 
 .movie-container:nth-child(2) {
@@ -166,7 +166,7 @@
 }
 
 
-@media(max-width: 1366px) {
+@media(max-width: 1440px) {
   .icon-and-title-container {
     height: 47%;
   }

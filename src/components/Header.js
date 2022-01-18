@@ -12,11 +12,11 @@ const Header = () => {
     <div className="navbar">
       <div className="nav-wrapper">
         <div className="mobile-cta">
-          <div className="round-btn">
             <Fade direction={"down"}>
-              <Link to="/add-movie" className='mobile'>+</Link>
+              <div className="round-btn">
+                <Link to="/add-movie" className='mobile'>+</Link>
+              </div>
             </Fade>
-          </div>
         </div>
         <Fade direction={"down"}>
           <ul className="left-nav">

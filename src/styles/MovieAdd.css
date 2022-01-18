@@ -58,6 +58,12 @@
   letter-spacing: 4px;
   font-family: 'Source Sans 3', sans-serif;
   text-align: center;
+  transition: opacity var(--speed) ease-in;
+  opacity: 1;
+}
+
+.hide-input {
+  opacity: 0;
 }
 
 .input-title::placeholder {

@@ -25,7 +25,6 @@ const MovieAdd = () => {
     return initialValue || [];
   });
   const [movie, setMovie] = useState({
-    id:'',
     title:'',
     url: ''});
 
@@ -36,8 +35,10 @@ const MovieAdd = () => {
   const formHandler = (e) => {
     e.preventDefault();
     const image = selectedImg;
-    uploadImg(image);
-    setUpload(true)
+    if (title !== '') {
+      uploadImg(image);
+      setUpload(true)
+    }
   };
 
   // Firebase function
@@ -65,7 +66,7 @@ const MovieAdd = () => {
   // avoid adding an empty object to the array
   useEffect(()=> {
     setMovie({
-      title, 
+      title: title.toUpperCase(), 
       url: imgUrl})
   },[imgUrl])
 
@@ -78,7 +79,7 @@ const MovieAdd = () => {
   
   // Saves the new array in local storage
   useEffect(()=> {
-    localStorage.setItem("movies", JSON.stringify(movies))
+    window.localStorage.setItem("movies", JSON.stringify(movies))
   },[movies])
 
   return (
@@ -131,7 +132,7 @@ const MovieAdd = () => {
               <Fade duration={2000}>
                 <input 
                   type="text"
-                  className='input-title'
+                  className={`input-title ${upload ? 'hide-input' : ''}`}
                   placeholder='TITULO' 
                   value={title.toUpperCase()} 
                   onChange={e => setTitle(e.target.value)} 
