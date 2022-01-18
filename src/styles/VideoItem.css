@@ -180,4 +180,7 @@
   .movie-container {
     height: 154px;
   }
+  .icon-and-title-container {
+    height: 29%;
+  }
 }
