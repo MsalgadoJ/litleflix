@@ -79,7 +79,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow-y: scroll;
 }
 
 .no-list-text {
@@ -91,6 +90,7 @@
   background: rgba(36,36,36,0.5);
   border-radius: 4px;
   padding: 12px;
+  box-shadow: 6px 6px 6px rgba(140, 120, 120, 0.3);
 }
 
 .no-list-text p {
