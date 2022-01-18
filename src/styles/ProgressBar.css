@@ -27,6 +27,11 @@
   font-family: 'Bebas Neue', cursive;
   font-family: 'Source Sans 3', sans-serif;
   font-weight: bold;
+  transition: transform 0.2s ease-in;
+}
+
+.btn-back:hover {
+ transform: scale(1.1);
 }
 
 .progress-bar {

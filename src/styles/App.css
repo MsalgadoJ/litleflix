@@ -1,8 +1,8 @@
 :root {
   --backgroundColor: #242424;
-  --primaryColor: Aqua;
+  --primaryColor: #64EEBC;
   --white: #fff;
-  --speed: 0.5s;
+  --speed: 0.3s;
   --barHeight: 4px
 }
 
@@ -31,4 +31,11 @@ body {
 .wrapper {
   width: 90%;
   margin: 0 auto;
+}
+
+@media(max-width: 414px) {
+  .App {
+    height: unset;
+    min-height: 100vh;
+  }
 }

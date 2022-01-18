@@ -3,7 +3,6 @@ import DropdownItem from './DropdownItem';
 import arrow from '../assests/images/arrow.png';
 import check from '../assests/images/check.png';
 import '../styles/DropdownMenu.css';
-import { CSSTransition } from 'react-transition-group';
 
 const DropdownMenu = ({options, selected, onSelectedChange}) => {
 
@@ -56,11 +55,11 @@ const DropdownMenu = ({options, selected, onSelectedChange}) => {
             className="dropdown-btn" 
             onClick={()=>setOpen(!open)}
           >
-           <p className="dropdown-text">VER: <strong>{selected.label}</strong></p> <img src={arrow} alt="chevron-down" title="chevron-down" />
+           <p className="dropdown-text">VER: <strong>{selected.label}</strong></p> 
+           <img src={arrow} alt="chevron-down" title="chevron-down" />
           </div>
-          {/* <div className={`dropdown-point ${open ? 'show' : ''}`}></div> */}
           <div className={`menu-visible ${open ? 'visible' : ''}`}>
-            <div className="menu">
+            <div className={`menu ${open ? 'showOptions' : ''}`}>
               {open ? renderOptions : null}
             </div>
           </div>
@@ -68,10 +67,6 @@ const DropdownMenu = ({options, selected, onSelectedChange}) => {
     </div>
   ) 
 };
-{/* <h3><button className='btn list' onClick={() => setOpen(!open)}>VER: POPULARES <img src={arrow} className="arrow" alt="arrow" /></button></h3>
-{open ? <Dropdown setList={toggleList}/> : null}
-<DropdownItem onClick={setList('popular')}>POPULARES</DropdownItem>
-<DropdownItem onClick={setList('personalized')}>MIS PELÍCULAS</DropdownItem> */}
 
 export default DropdownMenu;
 ;

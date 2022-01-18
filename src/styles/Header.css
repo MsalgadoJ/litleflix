@@ -1,10 +1,11 @@
 .navbar {
+  width: 100%;
   display: flex;
   align-items: center;
   height: 16vh;
   transition: all var(--speed) ease-in;
   z-index: 1;
-  position: relative;
+  position: absolute;
 }
 
 .navbar::before {
@@ -30,6 +31,37 @@
   width: 90%;
   margin: 0 auto;
 }
+.mobile-cta {
+  display: none;
+}
+
+.round-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border var(--speed) ease-in;
+}
+
+.round-btn:hover {
+  border: 1px solid var(--primaryColor);
+}
+
+.mobile {
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0;
+  font-size: 41px;
+  transition: color var(--speed) ease-in;
+}
+
+.mobile:hover {
+  color: var(--primaryColor);
+}
 
 .left-nav, .right-nav {
   display: flex;
@@ -50,18 +82,24 @@
   font-weight: 700;
   margin-right: 64px;
   text-decoration: none;
+  transition: color var(--speed) ease-in;
+}
+
+.link:hover {
+  color: var(--primaryColor);
 }
 
 .link.logo {
-  color: Aqua;
+  color: var(--primaryColor);
   font-size: 34px;
   line-height: 34px;
   font-style: normal;
   font-weight: 700;
+  transition: transform var(--speed) ease-in;
 }
 
-.logo span {
-  font-weight: 400;
+.logo:hover {
+  transform: scale(2);
 }
 
 /* RIGHT NAV */
@@ -92,8 +130,7 @@
 .notifications {
   position: relative;
 }
-.bell {
-}
+
 .dot {
   position: absolute;
   right: 2px;
@@ -105,4 +142,47 @@
 .profile img {
   width: 100%;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile img:hover {
+  filter:grayscale(0) brightness(1);
+}
+
+@media(max-width: 414px) {
+
+  .navbar {
+    height: 13vh;
+  }
+  .left-nav {
+    justify-content: center;
+  }
+
+  .burger-menu, .stripes, .notifications, .desktop  {
+    display: none;
+  }
+  .mobile-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link.logo {
+    margin: 0 auto;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  /* RIGHT NAV */
+  .right-nav {
+    width: unset;
+  }
+
+  .profile {
+    height: 42px;
+  }
+  .profile img {
+    width: 100%;
+    height: 100%;
+  }
 }

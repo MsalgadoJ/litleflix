@@ -1,5 +1,6 @@
 .main-container {
   height: 100vh;
+  padding-top: 16vh;
 }
 
 .main-container-columns {
@@ -11,7 +12,7 @@
 /* MAIN CONTENT */
 
 .main-content {
-  width: 80%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -26,12 +27,8 @@
   margin-bottom: 24px;
 }
 
-.hero-subtitle span {
-  font-weight: 700;
-}
-
 .hero-title {
-  color: aqua;
+  color: var(--primaryColor);
   font-size: 120px;
   line-height: 120px;
   font-weight: 700;
@@ -43,16 +40,6 @@
   margin-bottom: 34px;
 }
 
-/* .btn {
-  color: var(--white);
-  font-size: 18px;
-  font-weight: 400;
-  padding: 21px 60px;
-  border: none;
-  font-family: 'Source Sans 3', sans-serif;
-  letter-spacing: 4px;
-} */
-
 .play {
   background: var(--backgroundColor);
   margin-right: 24px;
@@ -60,6 +47,7 @@
 
 .play:hover {
   background: #615f5f;
+  box-shadow: rgba(255, 255, 255, 0.473) 0px 5px 15px 0px;
 }
 
 .list {
@@ -70,12 +58,13 @@
 .list:hover {
   background: rgba(36,36,36,1);
   border:1px solid rgba(36,36,36,1);
+  box-shadow: rgba(255, 255, 255, 0.473) 0px 5px 15px 0px;
 }
 
 
 /* LIST CONTAINER */
 .side-container {
-  width: 20%;
+  width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -90,4 +79,66 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.no-list-text {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: rgba(36,36,36,0.5);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.no-list-text p {
+  text-align: center;
+  color: var(--white);
+}
+
+@media(max-width:414px) {
+  .main-container {
+    height: unset;
+  }
+
+  .main-container-columns {
+    height: unset;
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100%;
+    align-items: center;
+    height: 55vh;
+  }
+
+  .hero-title {
+    font-size: 76px;
+    line-height: 76px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .play {
+    width: 280px;
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+
+  .list {
+    width: 280px;
+  }
+
+  /* LIST CONTAINER */
+  .side-container {
+    width: 100%;
+  } 
+
+  .list-container {
+    margin-bottom: 30px;
+  }
 }

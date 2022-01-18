@@ -1,6 +1,6 @@
-import React, {useMemo, useCallback} from 'react';
+import React, {useMemo, useCallback, useState} from 'react';
 import {useDropzone} from 'react-dropzone';
-import clip from '../assests/images/clip.png'
+import clip from '../assests/images/clip.png';
 
 const baseStyle = {
   flex: 1,
@@ -20,11 +20,11 @@ const baseStyle = {
 };
 
 const focusedStyle = {
-  borderColor: 'Aqua'
+  borderColor: 'var(--primaryColor)'
 };
 
 const acceptStyle = {
-  borderColor: 'Aqua'
+  borderColor: 'var(--primaryColor)'
 };
 
 const rejectStyle = {
@@ -35,12 +35,33 @@ const rejectStyle = {
 
 const DragAndDrop = ({onSelectedImgChange, onRejected}) => {
 
+  const [accepted, setAccepted] = useState([])
+  const [rejected, setRejected] = useState([])
+
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-    console.log('aceptados: ', acceptedFiles)
-    console.log('rechazados: ',rejectedFiles)
-    onSelectedImgChange(acceptedFiles[0])
-    onRejected(rejectedFiles)
+    onSelectedImgChange(acceptedFiles[0]);
+    onRejected(rejectedFiles);
+    setAccepted(acceptedFiles);
+    setRejected(rejectedFiles);
   }, [])
+
+  const renderAccFiles = (files) => {
+    let renderFilesMap = files.map((file, i) => {
+      return (
+        <p key={i}>{file.name}</p>
+      )
+    })
+    return renderFilesMap;
+  }
+
+  const renderRecFiles = (files) => {
+    let renderFilesMap = files.map((file, i) => {
+      return (
+        <p key={i}>{file.file.name}</p>
+      )
+    })
+    return renderFilesMap;
+  }
 
   const {
     getRootProps,
@@ -61,13 +82,24 @@ const DragAndDrop = ({onSelectedImgChange, onRejected}) => {
     isDragReject
   ]);
   
-
   return (
     <section className="container">
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
         <div className='drag-zone-wrapper'>
-        <img src={clip} alt="clip" title="clip"/> <p>AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ</p>
+          
+          {accepted.length === 0 && rejected.length === 0 ? 
+            (
+              <div className='zone-initial-text'>
+                <img src={clip} alt="clip" title="clip"/> <p className="desktop-text">AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ</p>
+                <p className="mobile-text">AGREGÁ UN ARCHIVO</p>
+              </div>
+            )
+          : null}
+
+          {accepted.length > 0 ? renderAccFiles(accepted) : null}
+          {rejected.length > 0 ? renderRecFiles(rejected) : null}
+
         </div>
       </div>
     </section>

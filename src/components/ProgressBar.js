@@ -7,6 +7,7 @@ const ProgressBar = (props) => {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(false)
 
+  // Delay the excution of the progress count
   useEffect(() => {
     let percentage = 0
     let interval;
@@ -16,7 +17,6 @@ const ProgressBar = (props) => {
       }, 900);
     }
     return () =>{ 
-      console.log('clear interval')
       clearInterval(interval)
     };
   }, [loading]);
@@ -28,11 +28,13 @@ const ProgressBar = (props) => {
     }
   }, [progress])
 
+  // Update states when the user retries to upload
   const retryBtn = () => {
     onUploadChange(false)
     onProgressChange(0)
   }
 
+  // Display text according to the load process
   const lodingDisplayText = () => {
     if(progress > 0 && progress < 90) {
       return <h3 className='progress-text'>CARGANDO <strong>{progress}%</strong></h3>
@@ -45,6 +47,7 @@ const ProgressBar = (props) => {
     } 
   }
 
+  // Display text according to the load process
   const cancelDisplayText = () => {
     if(progress > 0 && progress < 90) {
       return <h3 className='progress-text'>CANCELAR</h3>

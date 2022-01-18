@@ -1,5 +1,5 @@
 .dropdown-container {
-  width: 100%;
+  width: 90%;
   margin-bottom: 25px;
   position: relative;
   cursor: pointer;
@@ -9,6 +9,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
+  transition: background var(--speed) ease-in;
+}
+
+.dropdown-btn:hover {
+  background: rgba(36,36,36,0.5);
+  border-radius: 5px;
 }
 
 .dropdown-btn img {
@@ -24,12 +31,13 @@
   margin-right: 10px;
 }
 
+
 .menu-visible {
   position: absolute;
   background: var(--backgroundColor);
   z-index: 1;
   right: 0px;
-  top: 32px;
+  top: 49px;
   width: 100%;
   opacity: 0;
   transition: opacity var(--speed) ease-in-out;
@@ -38,14 +46,12 @@
 .menu-visible::before {
   position: absolute;
   content: "";
-  width: 12px;
-  height: 12px;
   top: -6px;
   right: 11px;
   background: var(--backgroundColor);
   transform: rotate(45deg);
   z-index: 1;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.1s ease-in-out;
 }
 
@@ -56,9 +62,19 @@
   opacity: 1;
 }
 
+.menu-visible.visible::before {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
 
-.show {
-  opacity:1;
+.menu {
+  opacity: 0;
+  transition: opacity var(--speed) ease-in-out;
+}
+
+.showOptions {
+  opacity: 1;
 }
 
 .menu-item {
