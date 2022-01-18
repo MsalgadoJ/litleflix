@@ -39,3 +39,15 @@ Start the server
 ```
 
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_MOVIESDB_API_KEY`
+
+
+
+## Authors
+
+- [@Mayra Rincones](https://github.com/MsalgadoJ)
+
