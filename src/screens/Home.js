@@ -100,7 +100,9 @@ const Home = () => {
             <p className="hero-subtitle">ORIGINAL DE <strong>LITEFLIX</strong></p>
             </Fade>
             <Fade direction={"left"}>
-            <h2 className="hero-title">{video !== '' ? (video.title).toUpperCase() : null }</h2>
+            {video !== '' ?
+            <h2 className={`hero-title ${video.title.length> 17 ? 'long-text' : ''}`}>{video.title.toUpperCase()}</h2>
+            : null}
             </Fade>
             <div className="hero-btns">
             <Fade direction={"up"}>

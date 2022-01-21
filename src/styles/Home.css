@@ -35,6 +35,11 @@
   margin-bottom: 32px;
 }
 
+.long-text {
+  font-size: 92px;
+  line-height: 92px;
+}
+
 .hero-btns {
   display: flex;
   margin-bottom: 34px;
@@ -111,13 +116,20 @@
   .main-content {
     width: 100%;
     align-items: center;
-    height: 55vh;
+    height: 64vh;
   }
 
   .hero-title {
     font-size: 76px;
     line-height: 76px;
+    text-align: center;
   }
+
+  .long-text {
+    font-size: 45px;
+    line-height: 51px;
+  }
+
 
   .hero-btns {
     flex-direction: column;
